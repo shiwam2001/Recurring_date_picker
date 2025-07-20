@@ -26,8 +26,8 @@ describe("generateRecurringDates", () => {
       weekdays: ["Mon", "Wed"],
     });
 
-    expect(dates).toContain("2025-07-02"); // Wednesday
-    expect(dates).toContain("2025-07-07"); // Monday
+    expect(dates).toContain("2025-07-02"); 
+    expect(dates).toContain("2025-07-07"); 
   });
 
   it("should handle monthly pattern recurrence (second Tuesday)", () => {
@@ -38,7 +38,7 @@ describe("generateRecurringDates", () => {
     interval: 1,
     pattern: {
       week: 2,
-      weekday: 2, // Tuesday (0 = Sunday)
+      weekday: 2, 
     },
   });
 
@@ -59,7 +59,7 @@ describe("generateRecurringDates", () => {
 
   it("should throw an error if startDate is missing", () => {
   expect(() =>
-    // @ts-expect-error testing invalid input
+    
     generateRecurringDates({
       endDate: "2025-01-01",
       frequency: "daily",
