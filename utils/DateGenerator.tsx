@@ -4,14 +4,14 @@ export type Frequency = 'daily' | 'weekly' | 'monthly' | 'yearly';
 
 export type RecurrenceConfig = {
   frequency: Frequency;
-  interval: number; // Every X days/weeks/months/years
-  weekdays?: string[]; // ['Mon', 'Wed'] (for weekly)
+  interval: number; 
+  weekdays?: string[]; 
   pattern?: {
-    week: number; // 1 = first, 2 = second, etc.
-    weekday: number; // 0 = Sunday, 1 = Monday, etc.
-  }; // For monthly pattern
-  startDate: string; // ISO
-  endDate?: string;  // ISO
+    week: number; 
+    weekday: number; 
+  }; 
+  startDate: string; 
+  endDate?: string;  
 };
 
 export function generateRecurringDates(config: RecurrenceConfig): string[] {
@@ -25,7 +25,7 @@ export function generateRecurringDates(config: RecurrenceConfig): string[] {
   } = config;
 
   const start = parseISO(startDate);
-  const end = endDate ? parseISO(endDate) : addYears(start, 1); // default 1 year span
+  const end = endDate ? parseISO(endDate) : addYears(start, 1); 
 
   const dates: string[] = [];
 
